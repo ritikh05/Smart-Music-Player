@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Mood Music Player</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+  <script defer src="script.js"></script>
+  
+</head>
+<link rel="stylesheet" href="styles.css">
+<body>
+  <div class="floating-particles"></div>
+  
+  <div class="container">
+    <header class="header">
+      <h1 class="title">🎵 Smart Mood Music Player 🎵</h1>
+      <p class="subtitle">AI-Powered Emotional Music Experience</p>
+    </header>
+
+    <div class="main-content">
+      <div class="video-section">
+        <div class="video-wrapper">
+          <div class="status-indicator"></div>
+          <video id="video" autoplay muted playsinline></video>
+        </div>
+        
+        <div class="mood-display">
+          <div class="mood-label">Current Mood</div>
+          <div id="mood" class="mood-value">Detecting...</div>
+        </div>
+      </div>
+
+      <div class="music-section">
+        <div class="video-player">
+          <!-- Happy -->
+          <iframe id="iframe-happy" class="yt-frame" 
+            src="https://www.youtube.com/embed/06Kg6XeMhQU?si=itXgIat2sCTGJsUS"
+            title="Happy Song"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
+
+          <!-- Sad -->
+          <iframe id="iframe-sad" class="yt-frame"
+            src="https://www.youtube.com/embed/Gq3OV_Xv0m0?si=4GMY68jJAXPxRL3X"
+            title="Sad Song"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
+
+          <!-- Angry -->
+          <iframe id="iframe-angry" class="yt-frame"
+            src="https://www.youtube.com/embed/g7ekSnvvKUo?si=16h8aTG0k-p1dled"
+            title="Angry Song"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
+
+          <!-- Neutral -->
+          <iframe id="iframe-neutral" class="yt-frame"
+            src="https://www.youtube.com/embed/AIIj0mBX1jU?si=DApcQ8QGrz9qjq4j"
+            title="Neutral Song"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
+
+          <!-- Disgusted -->
+          <iframe id="iframe-disgusted" class="yt-frame"
+            src="https://www.youtube.com/embed/yJg-Y5byMMw?si=26UtM_biWyMiWP6H"
+            title="Disgusted Song"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+          <div class="scan-button-container">
+  <button id="scan-btn" class="scan-btn">🎭 Scan Mood</button>
+</div>
+
+    </div>
+  </div>
+
+  <script>
+    // Create floating particles
+    function createParticles() {
+      const container = document.querySelector('.floating-particles');
+      const particleCount = 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        container.appendChild(particle);
+      }
+    }
+    
+    createParticles();
+  </script>
+</body>
+</html>
